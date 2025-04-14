@@ -1,11 +1,15 @@
 package com.uniube.main;
 
+import com.uniube.financeiro.ContaBancaria;
 import com.uniube.pessoa.Pessoa;
 import com.uniube.veiculos.Carro;
 
 public class Main {
     public static void main(String[] args) {
 
+
+
+        //TESTES CARRO
         Carro ferrari = new Carro("ferrari","f90", 1998, 50,100);
 
         System.out.println("ano: " + ferrari.getAno() + "\nKM: " + ferrari.getKilometragem() + "\npreço: " +ferrari.getPreco());
@@ -23,6 +27,7 @@ public class Main {
         System.out.println("Preço: " + ferrari.getPreco());
 
 
+        // TESTES PESSOA
         Pessoa davi = new Pessoa();
 
         davi.setNome("Davi");
@@ -35,6 +40,20 @@ public class Main {
 
         davi.fazerAniversario();
 
+
+
+
+        //TESTES CONTA BANCARIA
+        ContaBancaria contaDavics = new ContaBancaria("2",30000, "Davi");
+
+        contaDavics.verificarSaldoDisponivel();
+        contaDavics.aumentarLimite(30000);
+        contaDavics.verificarSaldoDisponivel();
+        System.out.println(contaDavics.getNumeroConta());
+        contaDavics.sacar(2500);
+        contaDavics.verificarSaldoDisponivel();
+        contaDavics.depositar(50000);
+        contaDavics.verificarSaldoDisponivel();
 
 
 

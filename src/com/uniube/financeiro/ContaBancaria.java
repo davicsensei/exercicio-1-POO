@@ -4,7 +4,7 @@ public class ContaBancaria {
     private String numeroConta;
     private double saldo;
     private String titular;
-    private double limiteCredito;
+    private double limiteCredito = 300;
 
     public double getLimiteCredito() {
         return limiteCredito;
@@ -50,5 +50,18 @@ public class ContaBancaria {
         } else{
             limiteCredito -= valor;
         }
+    }
+    public void verificarSaldoDisponivel(){
+        System.out.println("O saldo disponível é de: "+saldo);
+        System.out.println("O limite de crédito disponivel é de "+ limiteCredito);
+    }
+    public void aumentarLimite(double valor){
+        limiteCredito += valor;
+    }
+
+    public ContaBancaria(String numeroConta, double saldo,String titular){
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+        this.titular = titular;
     }
 }
