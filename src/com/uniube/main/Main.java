@@ -3,11 +3,11 @@ package com.uniube.main;
 import com.uniube.financeiro.ContaBancaria;
 import com.uniube.pessoa.Pessoa;
 import com.uniube.veiculos.Carro;
+import com.uniube.vendas.Pedido;
+import com.uniube.vendas.Produto;
 
 public class Main {
     public static void main(String[] args) {
-
-
 
         //TESTES CARRO
         Carro ferrari = new Carro("ferrari","f90", 1998, 50,100);
@@ -56,7 +56,23 @@ public class Main {
         contaDavics.verificarSaldoDisponivel();
 
 
+        //TESTES PRODUTO
+        Produto arroz = new Produto("Canastra", 23.90,20, "Alimento",0);
 
+        arroz.aplicarDesconto(50);
+        System.out.println(arroz.getPreco());
+
+        arroz.aumentarEstoque(35);
+        System.out.println(arroz.getQuantidade());
+
+        //TESTES PEDIDO
+        Pedido pedido1 = new Pedido(1,"Davics", "15/01/2025", 1000, "Em andamento");
+
+        pedido1.adicionarItem(300);
+        pedido1.removerItem(100);
+        pedido1.finalizarPedido();
+
+        pedido1.exibirInfos();
 
     }
 }
